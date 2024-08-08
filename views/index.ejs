@@ -4,16 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Posts</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Quora Posts</h1>
     <% for(post of posts) { %>
-        <div class="post">
-            <h3 class="user">@<%= post.username %></h3>
-            <h4 class="content"><%= post.content %></h4>
+        <div class="card">
+            <div id="card1">
+                <div>@<%= post.username %></div>
+            </div>
+            <div class="content">
+                <div class="name"><%= post.content %></div>
+                <div class="post">
+                    <form action="/posts/<%= post.id %>" method="get">
+                        <button>See in Details</button>
+                    </form>
+                    <br>
+                    <form action="/posts/edit/<%= post.id %>" method="get">
+                        <button>Edit Post</button>
+                    </form>
+                    <br>
+                    <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+                        <button>Delete Post</button>
+                    </form>
+                </div>
+            </div>
         </div>
     <% } %>
+
+    <br><br>
+    <form action="/posts/new" method="get">
+        <button>Create New Post</button>
+    </form>
 </body>
 </html>
 

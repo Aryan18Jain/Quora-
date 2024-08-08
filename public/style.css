@@ -1,0 +1,36 @@
+.card{
+    height: 400px;
+    width: 250px;
+    box-shadow: 2PX 4PX 8PX black;
+    border-radius: 10px;
+    transition: 0.5s;
+    display: inline-block;
+    margin: 10px;
+}
+.card:hover{
+    box-shadow: 2px 2px 20px black;
+}
+#card1{
+    height: 100px;
+    width: 250px;
+    background-color: rgba(128, 0, 128, 0.5);
+    border-radius: 10px 10px 0px 0px ;
+    display: flexbox;
+    text-align: center;
+    align-content: center;
+}
+.name
+{
+    padding: 5px;
+    font-size: large;
+    font-weight: 700;
+}
+.post
+{
+    font-size: small;
+}
+.content{
+    display: flexbox;
+    padding-left: 5px;
+    
+}
