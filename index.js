@@ -31,3 +31,13 @@ let posts = [
 app.get("/posts",(req,res) => {
     res.render("index",{posts});
 });
+
+app.get("/posts/new",(req,res) => {
+    res.render("new");
+});
+
+app.post("/posts",(req,res) => {
+    let {username,content} = req.body;
+    posts.push({username : username,content : content});
+    res.send("Post Request Working");
+});
